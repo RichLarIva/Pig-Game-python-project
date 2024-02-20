@@ -76,7 +76,7 @@ lint: flake8 pylint
 #
 black:
 	@$(call MESSAGE,$@)
-	 $(PYTHON) -m black guess/ test/
+	 $(PYTHON) -m black src/ test/
 
 codestyle: black
 
@@ -104,12 +104,12 @@ test: lint coverage
 pydoc:
 	@$(call MESSAGE,$@)
 	install -d doc/pydoc
-	$(PYTHON) -m pydoc -w guess/*.py
+	$(PYTHON) -m pydoc -w src/*.py
 	mv *.html doc/pydoc
 
 pdoc:
 	@$(call MESSAGE,$@)
-	pdoc --force --html --output-dir doc/pdoc guess/*.py
+	pdoc --force --html --output-dir doc/pdoc src/*.py
 
 pyreverse:
 	@$(call MESSAGE,$@)

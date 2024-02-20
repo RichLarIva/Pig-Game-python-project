@@ -1,0 +1,6 @@
+digraph "classes" {
+rankdir=BT
+charset="utf-8"
+"guess.game.Game" [color="black", fontcolor="black", label=<{Game|high_number : int<br ALIGN="LEFT"/>low_number : int<br ALIGN="LEFT"/>the_number : NoneType<br ALIGN="LEFT"/>|cheat()<br ALIGN="LEFT"/>guess(a_number)<br ALIGN="LEFT"/>high()<br ALIGN="LEFT"/>low()<br ALIGN="LEFT"/>start()<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"guess.Shell.Shell" [color="black", fontcolor="black", label=<{Shell|game<br ALIGN="LEFT"/>intro : str<br ALIGN="LEFT"/>prompt : str<br ALIGN="LEFT"/>|do_EOF(arg)<br ALIGN="LEFT"/>do_cheat(_)<br ALIGN="LEFT"/>do_exit(_)<br ALIGN="LEFT"/>do_guess(arg)<br ALIGN="LEFT"/>do_q(arg)<br ALIGN="LEFT"/>do_quit(arg)<br ALIGN="LEFT"/>do_start(_)<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+}

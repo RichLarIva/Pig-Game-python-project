@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+# !/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 """
@@ -14,7 +14,8 @@ import shell
 def main():
     """Executes the main program."""
     print(__doc__)
-    shell.Shell.cmdloop()
+    shell_instance = shell.Shell
+    shell_instance.cmdloop()
 
 
 if __name__ == "__main__":
