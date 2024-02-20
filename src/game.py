@@ -1,15 +1,16 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""Pig dice game."""
+"""Pig dice src."""
 
 import dice
+from player import Player
 
 
 class Game:
 
     def __init__(self):
-        """Initializes the game"""
+        """Initializes the src"""
         print("initalize")
 
     def start(self):

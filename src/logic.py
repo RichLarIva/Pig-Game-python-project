@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 
-"""The game logic"""
+"""The src logic"""
 
 import random
 

@@ -16,7 +16,7 @@ import dice
 class Shell(cmd.Cmd):
     """The shell for handling commands and such"""
 
-    intro = "Welcome to the game. Type help or ? to list commands.\n"
+    intro = "Welcome to the src. Type help or ? to list commands.\n"
     prompt = "(game) "
 
     def __init__(self):
@@ -25,7 +25,7 @@ class Shell(cmd.Cmd):
         self.dice = dice.Dice()
 
     def do_start(self, arg):
-        """Start the game with the player throwing the dice"""
+        """Start the src with the player throwing the dice"""
         message = "You will start throwing the dice. You managed to roll {}"
         self.dice.throw()
         print(message.format(self.dice.current_number))
@@ -36,14 +36,14 @@ class Shell(cmd.Cmd):
         print("You rolled:", self.dice.current_number)
 
     def do_exit(self, arg):
-        """Leave the game."""
-        print("Hope you enjoyed the game.")
+        """Leave the src."""
+        print("Hope you enjoyed the src.")
         return True
 
     def do_q(self, arg):
-        """Leave the game."""
+        """Leave the src."""
         return self.do_exit(arg)
 
     def do_EOF(self, arg):
-        """Leave the game."""
+        """Leave the src."""
         return self.do_exit(arg)
