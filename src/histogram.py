@@ -6,7 +6,7 @@ class Histogram:
         self.histogram = {}
 
     def record_roll(self, roll):
-        """Record a dice roll in the histogram."""
+        """Record a die roll in the histogram."""
         if roll in self.histogram:
             self.histogram[roll] += 1
         else:

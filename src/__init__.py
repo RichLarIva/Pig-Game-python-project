@@ -2,4 +2,4 @@
 # -*- coding: utf-8 -*-
 
 
-"""Pig Game"""
+"""Pig Game."""

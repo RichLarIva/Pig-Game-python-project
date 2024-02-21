@@ -19,5 +19,6 @@ class Dice:
         random.seed(time.time())
 
     def throw(self):
-        """Handles the throw function by generation random number by default between 1 and 6"""
+        """Handles the throw function by generation
+        random number by default between 1 and 6."""
         self.current_number = random.randint(self.LOW_NUMBER, self.MAX_NUMBER)

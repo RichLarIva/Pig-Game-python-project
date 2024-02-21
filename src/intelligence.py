@@ -22,6 +22,7 @@ class Intelligence:
             print("Please make sure you made it in the correct format")
 
     def play_turn(self, is_turn):
+        rolls = []
         while is_turn:
             i = 0
             if i == 0:
@@ -30,6 +31,7 @@ class Intelligence:
                 print(f"AI rolled {self.die.current_number}")
                 if self.die.current_number != 1:
                     self.score += self.die.current_number
+                    rolls.append(self.die.current_number)
                     i += 1
                 else:
                     is_turn = False
@@ -46,10 +48,11 @@ class Intelligence:
                 print(f"AI rolled {self.die.current_number}")
                 if self.die.current_number != 1:
                     self.score += self.die.current_number
+                    rolls.append(self.die.current_number)
                     i += 1
                 else:
                     is_turn = False
                     print(f"AI scored {self.score}")
                     break
-                
-
+        print(rolls)
+        return rolls

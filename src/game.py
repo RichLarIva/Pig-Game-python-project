@@ -10,7 +10,7 @@ import player
 class Game:
 
     def __init__(self, target_score=100):
-        """Initializes the Game"""
+        """Initializes the Game."""
         self.target_score = target_score
         self.dice = dice.Dice()
 
