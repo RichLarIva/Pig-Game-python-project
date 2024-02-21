@@ -50,7 +50,6 @@ class Shell(cmd.Cmd):
         else:
             self.player_data.add_to_score(self.dice.current_number)
 
-
     def do_throw(self, arg):
         """Throw the dice."""
         self.dice.throw()
@@ -61,6 +60,13 @@ class Shell(cmd.Cmd):
                 self.histgram.record_roll(roll)
         else:
             self.player_data.add_to_score(self.dice.current_number)
+        if(self.player_data.score >= self.target_score):
+            print(f"{self.player_data.name} won with {self.player_data.score}!")
+            self.histgram.display()
+        if(self.ai.score >= self.target_score):
+            print(f"The AI won with {self.ai.score}!")
+            self.do_score()
+            self.histgram.display()
 
 
     def do_switch_turn(self, _):
@@ -73,6 +79,7 @@ class Shell(cmd.Cmd):
         self.histgram.display()
 
     def do_score(self, _):
+        """Shows the current scores"""
         print(f"Current scores:\n{self.player_data.name}\tAI\n{self.player_data.score}\t{self.ai.score}")
 
     def do_exit(self, arg):
