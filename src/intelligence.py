@@ -28,6 +28,7 @@ class Intelligence:
                 die.throw()
                 if self.die.current_number != 1:
                     self.score += self.die.current_number
+                    i += 1
                 else:
                     is_turn = False
                     break
@@ -35,4 +36,14 @@ class Intelligence:
                 """Check if AI should just switch turn"""
                 choice = random.randint(1, 2)
                 # if choice is 1 then continue throwing else just switch turn
+                if choice == 2:
+                    break
+                die.throw()
+                if self.die.current_number != 1:
+                    self.score += self.die.current_number
+                    i += 1
+                else:
+                    is_turn = False
+                    break
+                
 

@@ -18,7 +18,7 @@ import intelligence
 
 class Shell(cmd.Cmd):
     """The shell for handling commands and such"""
-
+    histgram = histogram
     player_data = player
     ai = intelligence
     is_player_turn = True
@@ -29,13 +29,14 @@ class Shell(cmd.Cmd):
         super().__init__()
         self.game = game.Game()
         self.dice = dice.Dice()
+        self.histgram = histogram.Histogram()
         self.target_score = target_score
-
-    def do_start(self, _):
-        """Start the game with the player throwing the dice"""
         player_name = input("Whats your name? ")
         self.player_data = player.Player(player_name)
         self.ai = intelligence.Intelligence()
+
+    def do_start(self, _):
+        """Start the game with the player throwing the dice"""
         message = "You will start throwing the dice.\nYou managed to roll {}"
         self.game.start()
         self.dice.throw()
@@ -47,7 +48,7 @@ class Shell(cmd.Cmd):
         """Throw the dice"""
         self.dice.throw()
         print("You rolled:", self.dice.current_number)
-        histogram.Histogram.record_roll(self.dice.current_number)
+        self.histgram.record_roll(self.dice.current_number)
 
     def do_switch_turn(self, _):
         """Switches turn"""
