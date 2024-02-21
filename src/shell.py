@@ -15,8 +15,10 @@ import histogram
 import player
 import intelligence
 
+
 class Shell(cmd.Cmd):
     """The shell for handling commands and such"""
+
     player_data = player
     ai = intelligence
     is_player_turn = True
@@ -29,7 +31,6 @@ class Shell(cmd.Cmd):
         self.dice = dice.Dice()
         self.target_score = target_score
 
-
     def do_start(self, _):
         """Start the game with the player throwing the dice"""
         player_name = input("Whats your name? ")
@@ -39,6 +40,8 @@ class Shell(cmd.Cmd):
         self.game.start()
         self.dice.throw()
         print(message.format(self.dice.current_number))
+        if self.dice.current_number == 1:
+            ai.play_turn(True)
 
     def do_throw(self, arg):
         """Throw the dice"""
@@ -48,7 +51,7 @@ class Shell(cmd.Cmd):
 
     def do_switch_turn(self, _):
         """Switches turn"""
-        self.ai.play_turn()
+        self.ai.play_turn(True)
 
     def do_exit(self, arg):
         """Leave the src."""
@@ -62,6 +65,7 @@ class Shell(cmd.Cmd):
     def do_EOF(self, arg):
         """Leave the src."""
         return self.do_exit(arg)
+
 
 if __name__ == "__main__":
     print(__doc__)

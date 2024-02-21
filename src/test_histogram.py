@@ -43,9 +43,10 @@ class TestHistogramClass(unittest.TestCase):
         histogram.record_roll(3)
 
         expected_output = "Dice Roll Histogram:\n1: ***\n2: ***\n3: ***\n"
-        with unittest.mock.patch('builtins.print') as mock_print:
+        with unittest.mock.patch("builtins.print") as mock_print:
             histogram.display()
             mock_print.assert_called_once_with(expected_output)
+
 
 if __name__ == "__main__":
     unittest.main()

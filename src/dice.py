@@ -7,6 +7,7 @@
 import random
 import time
 
+
 class Dice:
     LOW_NUMBER = 1
     MAX_NUMBER = 6
