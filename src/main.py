@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Lets play a src of "Pig (dice src)".
+Lets play a game of "Pig (dice game)".
 
 Will throw a singular dice between 1 and 6.
 

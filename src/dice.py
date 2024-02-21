@@ -5,7 +5,7 @@
 """Dice handling."""
 
 import random
-
+import time
 
 class Dice:
     LOW_NUMBER = 1
@@ -15,7 +15,7 @@ class Dice:
 
     def __init__(self):
         """Init the dice class."""
-        random.seed()
+        random.seed(time.time())
 
     def throw(self):
         """Handles the throw function by generation random number by default between 1 and 6"""

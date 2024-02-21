@@ -4,7 +4,7 @@
 """Unit testing."""
 
 import unittest
-from src import histogram
+import histogram
 
 
 class TestHistogramClass(unittest.TestCase):
@@ -18,23 +18,23 @@ class TestHistogramClass(unittest.TestCase):
 
     def test_record_roll(self):
         """Record multiple rolls and see if the histogram is correct."""
-        histogram = Histogram()
-        histogram.record_roll(1)
-        histogram.record_roll(2)
-        histogram.record_roll(3)
-        histogram.record_roll(1)
-        histogram.record_roll(2)
-        histogram.record_roll(3)
-        histogram.record_roll(1)
-        histogram.record_roll(2)
-        histogram.record_roll(3)
+        test_histogram = Histogram()
+        test_histogram.record_roll(1)
+        test_histogram.record_roll(2)
+        test_histogram.record_roll(3)
+        test_histogram.record_roll(1)
+        test_histogram.record_roll(2)
+        test_histogram.record_roll(3)
+        test_histogram.record_roll(1)
+        test_histogram.record_roll(2)
+        test_histogram.record_roll(3)
 
         expected_histogram = {1: 3, 2: 3, 3: 3}
-        self.assertEqual(histogram.histogram, expected_histogram)
+        self.assertEqual(test_histogram.Histogram(), expected_histogram)
 
     def test_display(self):
         """Tests the display."""
-        histogram = Histogram()
+        test_histogram = Histogram()
         histogram.record_roll(1)
         histogram.record_roll(2)
         histogram.record_roll(3)
