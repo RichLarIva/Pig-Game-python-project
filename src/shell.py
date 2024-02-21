@@ -12,20 +12,29 @@ import cmd
 import game
 import dice
 import histogram
+import player
+import intelligence
 
 class Shell(cmd.Cmd):
     """The shell for handling commands and such"""
-
+    player_data = player
+    ai = intelligence
+    is_player_turn = True
     intro = "Welcome to the src. Type help or ? to list commands.\n"
     prompt = "(game) "
 
-    def __init__(self):
+    def __init__(self, target_score=100):
         super().__init__()
         self.game = game.Game()
         self.dice = dice.Dice()
+        self.target_score = target_score
+
 
     def do_start(self, _):
-        """Start the src with the player throwing the dice"""
+        """Start the game with the player throwing the dice"""
+        player_name = input("Whats your name? ")
+        self.player_data = player.Player(player_name)
+        self.ai = intelligence.Intelligence()
         message = "You will start throwing the dice.\nYou managed to roll {}"
         self.game.start()
         self.dice.throw()
@@ -35,6 +44,11 @@ class Shell(cmd.Cmd):
         """Throw the dice"""
         self.dice.throw()
         print("You rolled:", self.dice.current_number)
+        histogram.Histogram.record_roll(self.dice.current_number)
+
+    def do_switch_turn(self, _):
+        """Switches turn"""
+        self.ai.play_turn()
 
     def do_exit(self, arg):
         """Leave the src."""
@@ -50,5 +64,6 @@ class Shell(cmd.Cmd):
         return self.do_exit(arg)
 
 if __name__ == "__main__":
+    print(__doc__)
     shell = Shell()
     shell.cmdloop()
