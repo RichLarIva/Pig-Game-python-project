@@ -5,8 +5,7 @@
 
 import unittest
 from unittest import mock
-from src import histogram
-
+from piggame import histogram
 
 class TestHistogramClass(unittest.TestCase):
     """Test the class."""

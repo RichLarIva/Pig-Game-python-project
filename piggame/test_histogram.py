@@ -8,7 +8,6 @@ from unittest import mock
 import histogram
 
 
-
 class TestHistogramClass(unittest.TestCase):
     """Test the class."""
 
@@ -45,6 +44,7 @@ class TestHistogramClass(unittest.TestCase):
         with unittest.mock.patch("builtins.print") as mock_print:
             self.test_histogram.display()
             mock_print.assert_called_once_with(expected_output)
+
 
 if __name__ == "__main__":
     unittest.main()
