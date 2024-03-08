@@ -34,9 +34,13 @@
 &#34;&#34;&#34;Dice handling.&#34;&#34;&#34;
 
 import random
+import time
 
 
 class Dice:
+    &#34;&#34;&#34;Class which handles the dice in game.&#34;&#34;&#34;
+
+
     LOW_NUMBER = 1
     MAX_NUMBER = 6
 
@@ -44,10 +48,11 @@ class Dice:
 
     def __init__(self):
         &#34;&#34;&#34;Init the dice class.&#34;&#34;&#34;
-        random.seed()
+        random.seed(time.time())
 
     def throw(self):
-        &#34;&#34;&#34;Handles the throw function by generation random number by default between 1 and 6&#34;&#34;&#34;
+        &#34;&#34;&#34;Handles the throw function by generation
+        random number by default between 1 and 6.&#34;&#34;&#34;
         self.current_number = random.randint(self.LOW_NUMBER, self.MAX_NUMBER)</code></pre>
 </details>
 </section>
@@ -64,12 +69,16 @@ class Dice:
 <span>class <span class="ident">Dice</span></span>
 </code></dt>
 <dd>
-<div class="desc"><p>Init the dice class.</p></div>
+<div class="desc"><p>Class which handles the dice in game.</p>
+<p>Init the dice class.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class Dice:
+    &#34;&#34;&#34;Class which handles the dice in game.&#34;&#34;&#34;
+
+
     LOW_NUMBER = 1
     MAX_NUMBER = 6
 
@@ -77,10 +86,11 @@ class Dice:
 
     def __init__(self):
         &#34;&#34;&#34;Init the dice class.&#34;&#34;&#34;
-        random.seed()
+        random.seed(time.time())
 
     def throw(self):
-        &#34;&#34;&#34;Handles the throw function by generation random number by default between 1 and 6&#34;&#34;&#34;
+        &#34;&#34;&#34;Handles the throw function by generation
+        random number by default between 1 and 6.&#34;&#34;&#34;
         self.current_number = random.randint(self.LOW_NUMBER, self.MAX_NUMBER)</code></pre>
 </details>
 <h3>Class variables</h3>
@@ -104,13 +114,15 @@ class Dice:
 <span>def <span class="ident">throw</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Handles the throw function by generation random number by default between 1 and 6</p></div>
+<div class="desc"><p>Handles the throw function by generation
+random number by default between 1 and 6.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def throw(self):
-    &#34;&#34;&#34;Handles the throw function by generation random number by default between 1 and 6&#34;&#34;&#34;
+    &#34;&#34;&#34;Handles the throw function by generation
+    random number by default between 1 and 6.&#34;&#34;&#34;
     self.current_number = random.randint(self.LOW_NUMBER, self.MAX_NUMBER)</code></pre>
 </details>
 </dd>
